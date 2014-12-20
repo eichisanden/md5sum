@@ -39,7 +39,7 @@ function handleFileSelect(evt) {
 				var md5sum = MD5_hexhash(e.target.result);
 
 				var div = document.createElement('div');
-				div.innerHTML = [md5sum, '   ', theFile.name].join('');
+				div.innerHTML = [md5sum, '&nbsp;&nbsp;&nbsp;', theFile.name].join('');
 				document.getElementById('list').insertBefore(div, null);
 			};
 		})(f);
