@@ -24,9 +24,6 @@
 
   $(function() {
     var get, xhr, xhr2;
-    hljs.configure({
-      useBR: true
-    });
     get = getParameter();
     xhr = new XMLHttpRequest();
     xhr.open('GET', get['url'], true);
@@ -49,9 +46,6 @@
     xhr2.onload = function() {
       $('#content').html(escapeHTML(this.response));
       return $('pre code').each(function(i, block) {
-        hljs.configure({
-          tabReplace: "    "
-        });
         return hljs.highlightBlock(block);
       });
     };

@@ -13,7 +13,8 @@ escapeHTML = (html) ->
 	return $('<div>').text(html).html();
 
 $(()->
-	hljs.configure({useBR: true});
+	# hljs.configure({tabReplace: '    '})
+	# hljs.initHighlightingOnLoad()
 	get = getParameter()
 	xhr = new XMLHttpRequest()
 	xhr.open('GET', get['url'], true)
@@ -32,8 +33,13 @@ $(()->
 	xhr2.responseType = "text"
 	xhr2.onload = ->
 		$('#content').html(escapeHTML(this.response))
+		# $('#content').html(hljs.highlightAuto(hljs.fixMarkup(this.response)).value)
+
+#		$('#content').html(this.response)
+		# hljs.configure({
+		# 	tabReplace: "    ",
+		# })
 		$('pre code').each((i, block)->
-			hljs.configure({tabReplace: "    "})
 			hljs.highlightBlock(block)
 		)
 	xhr2.send()
