@@ -51,7 +51,7 @@ $(function() {
     $('#md5sumLf').html(md5sumLf);
     $('#encoding').html(encoding);
     $('#newline').html(newline);
-    $("#content").html(content);
+    $("#content").html(escapeHTML(content));
     $('pre code').each(function(i, block) {
       return hljs.highlightBlock(block);
     });
