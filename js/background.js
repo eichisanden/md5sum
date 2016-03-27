@@ -1,12 +1,13 @@
-chrome.browserAction.onClicked.addListener(function(tab) {
+'use strict';
+
+chrome.browserAction.onClicked.addListener((tab) => {
   return chrome.tabs.create({
-    "url": "../html/popup.html"
+    'url': '../html/popup.html'
   });
 });
 
-chrome.contextMenus.onClicked.addListener(function(info, tab) {
-  var url;
-  url = '../html/src.html?url=' + info.linkUrl;
+chrome.contextMenus.onClicked.addListener((info, tab) => {
+  const url = `../html/src.html?url=${info.linkUrl}`;
   return chrome.windows.create({
     url: url,
     width: 800,
@@ -16,6 +17,6 @@ chrome.contextMenus.onClicked.addListener(function(info, tab) {
 
 chrome.contextMenus.create({
   id: 'open',
-  title: "md5sum",
+  title: 'md5sum',
   contexts: ['link']
 });
