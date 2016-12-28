@@ -1,8 +1,9 @@
 {
 	"name": "md5sum",
-	"version": "1.2",
+	"short_name": "md5sum",
+	"version": "1.4",
 	"manifest_version": 2,
-	"description": "This extension output md5 message digest by right-clicking on link or drag-and-drop files.",
+	"description": "This extension outputs MD5 message digest by right-clicking on link or drag-and-drop files.",
 	"background": {
 		"persistent": false,
 		"scripts": [

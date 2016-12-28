@@ -1,7 +1,7 @@
 'use strict';
 
 function getParameter() {
-  const get = new Object();
+  const get = {};
   if (location.search.length > 1) {
     const rets = location.search.substr(1).split('&');
     for (const ret of rets) {
