@@ -27,9 +27,9 @@ class Content {
   }
 
   getLineFeedCode() {
-    if (this.codeString.indexOf('\r\n', 0) > 0) {
+    if (this.codeString.indexOf('\r\n', 0) >= 0) {
       return 'CRLF';
-    } else if (this.codeString.indexOf('\n', 0) > 0) {
+    } else if (this.codeString.indexOf('\n', 0) >= 0) {
       return 'LF';
     } else {
       return 'CR';
