@@ -16,7 +16,6 @@
           const content = new Content(event.target.result);
           const tr = document.createElement('tr');
           tr.innerHTML = `<td>${content.getMd5sum()}</td>
-            <td>${content.getMd5sumLf()}</td>
             <td>${content.getEncoding()}</td>
             <td>${content.getLineFeedCode()}</td>
             <td>${file.name}</td>`;

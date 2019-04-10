@@ -25,7 +25,6 @@ $(() => {
   xhr.onload = () => {
     const content = new Content(xhr.response);
     $('#md5sum').html(content.getMd5sum());
-    $('#md5sumLf').html(content.getMd5sumLf());
     $('#encoding').html(content.getEncoding());
     $('#newline').html(content.getLineFeedCode());
     $('#content').html(escapeHTML(content.getUnicodeCodeString()));
